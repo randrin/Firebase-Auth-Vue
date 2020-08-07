@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Login from "@/components/Login";
 import Home from "@/components/Home";
 import Profile from "@/components/Profile";
+import Todos from '@/components/Todos';
 import firebase from "firebase";
 
 Vue.use(Router);
@@ -25,6 +26,14 @@ let router = new Router({
       component: Login,
       meta: {
         guest: true
+      }
+    },
+    {
+      path: "/todo",
+      name: "Todos",
+      component: Todos,
+      meta: {
+        auth: true
       }
     },
     {

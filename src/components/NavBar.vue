@@ -43,6 +43,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+          <li class="nav-item" v-if="userIsLogged">
+          <router-link :to="{ name: 'Todos' }" class="nav-link"
+            >TODO List</router-link
+          >
+        </li>
         <li class="nav-item" v-if="userIsLogged">
           <router-link :to="{ name: 'Profile' }" class="nav-link"
             >My Profile</router-link
