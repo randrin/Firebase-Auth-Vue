@@ -9,15 +9,15 @@
 <script>
 import navigation from "@/components/NavBar.vue";
 import firebase from "firebase";
-import * as firebaseui from "firebaseui"
+import * as firebaseui from "firebaseui";
 import "firebaseui/dist/firebaseui.css";
 export default {
   name: "Login",
-  data() {
-    return {};
-  },
   components: {
     navigation
+  },
+  data() {
+    return {};
   },
   mounted() {
     let ui = firebaseui.auth.AuthUI.getInstance();

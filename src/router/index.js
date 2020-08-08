@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Login from "@/components/Login";
+import Register from "@/components/Register";
 import Home from "@/components/Home";
 import Profile from "@/components/Profile";
 import Todos from '@/components/Todos';
@@ -24,6 +25,14 @@ let router = new Router({
       path: "/login",
       name: "Login",
       component: Login,
+      meta: {
+        guest: true
+      }
+    },
+    {
+      path: "/register",
+      name: "Register",
+      component: Register,
       meta: {
         guest: true
       }

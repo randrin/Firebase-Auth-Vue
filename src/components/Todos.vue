@@ -2,22 +2,22 @@
   <section>
     <navigation></navigation>
     <h5 class="center-align">To Do List</h5>
-    <ul class="collection with-header">
-      <li class="collection-header">
-        <div class="row">
-          <div class="input-field col s10">
-            <input
-              id="new_todo"
-              type="text"
-              class="validate"
-              v-model="todo.title"
-            />
-          </div>
-          <div class="input-field col s2">
-            <button class="btn" @click="addTodo">Add</button>
-          </div>
+    <div class="ui container">
+      <div class="row">
+        <div class="ui input">
+          <input
+            id="new_todo"
+            type="text"
+            class="validate"
+            v-model="todo.title"
+          />
         </div>
-      </li>
+        <div class="input-field col s2">
+          <button class="ui primary button" @click="addTodo">Add</button>
+        </div>
+      </div>
+    </div>
+    <ul class="collection with-header">
       <li class="collection-item" v-for="todo in todos" :key="todo.id">
         <span class="deleteIcon" @click="deleteToDo(todo.id)">✕</span>
         {{ todo.title }}
@@ -115,10 +115,10 @@ export default {
   margin: 0 auto;
 }
 .deleteIcon {
-    margin-right: 10px;
-    cursor: pointer;
+  margin-right: 10px;
+  cursor: pointer;
 }
 .deleteIcon:hover {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 </style>

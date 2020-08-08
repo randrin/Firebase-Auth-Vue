@@ -5,6 +5,11 @@ import App from './App';
 import router from './router';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import VueToast from 'vue-toast-notification';
+// Import one of available themes
+import "vue-toast-notification/dist/theme-default.css";
+//import 'vue-toast-notification/dist/theme-sugar.css';
+
 import firebase from "firebase";
 const firebaseConfig = {
   apiKey: "AIzaSyAoI97OZEueeefa3bsxkWqcPkXO4uCsIew",
@@ -19,6 +24,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 Vue.config.productionTip = false
+
+Vue.use(VueToast);
 
 /* eslint-disable no-new */
 new Vue({

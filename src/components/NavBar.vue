@@ -43,7 +43,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li class="nav-item" v-if="userIsLogged">
+        <li class="nav-item" v-if="userIsLogged">
           <router-link :to="{ name: 'Todos' }" class="nav-link"
             >TODO List</router-link
           >
@@ -60,6 +60,11 @@
         </li>
         <li v-else class="nav-item">
           <a href="#" class="nav-link" @click="signOut">Logout</a>
+        </li>
+        <li v-if="!userIsLogged" class="nav-item">
+          <router-link :to="{ name: 'Register' }" class="nav-link"
+            >Register</router-link
+          >
         </li>
       </ul>
     </div>
