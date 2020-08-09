@@ -66,6 +66,13 @@ export default {
           createdAt: new Date(),
           isCompleted: false
         });
+      this.todo.title = "";
+      this.$toast.open({
+        message: "Todo added successfully.",
+        type: "success",
+        position: "top-right",
+        dismissible: true
+      });
     },
     async getTodos() {
       var todosRef = await firebase
@@ -74,7 +81,6 @@ export default {
         .doc(firebase.auth().currentUser.uid)
         .collection("todos");
 
-      console.log(todosRef);
       todosRef.onSnapshot(snap => {
         this.todos = [];
         snap.forEach(doc => {
@@ -95,6 +101,21 @@ export default {
         .update({
           isCompleted: isChecked
         });
+      if (e.target.checked) {
+        this.$toast.open({
+          message: "Todo activated successfully.",
+          type: "warning",
+          position: "top-right",
+          dismissible: true
+        });
+      } else {
+        this.$toast.open({
+          message: "Todo desactivated successfully.",
+          type: "warning",
+          position: "top-right",
+          dismissible: true
+        });
+      }
     },
     deleteToDo(docId) {
       firebase
